@@ -2,7 +2,6 @@
 
 An intelligent web application that automatically summarizes research papers using Natural Language Processing (NLP) and Machine Learning techniques. The system helps students, researchers, and professionals quickly understand the main ideas, methodology, and conclusions of lengthy academic papers.
 
----
 
 ## 🚀 Features
 
@@ -14,7 +13,6 @@ An intelligent web application that automatically summarizes research papers usi
 * 🌐 User-friendly web interface
 * ⚡ Fast and efficient summarization using AI/NLP techniques
 
----
 
 ## 🛠️ Technologies Used
 
@@ -41,7 +39,6 @@ An intelligent web application that automatically summarizes research papers usi
 
 * PyPDF2 / pdfplumber
 
----
 
 ## 📂 Project Structure
 
@@ -65,7 +62,6 @@ ai-research-paper-summarization/
 └── README.md
 ```
 
----
 
 ## ⚙️ How It Works
 
@@ -80,7 +76,6 @@ ai-research-paper-summarization/
 4. The AI model analyzes the paper and generates a summary.
 5. The summarized text is displayed to the user.
 
----
 
 ## 📥 Installation
 
@@ -109,7 +104,6 @@ Open in browser:
 http://127.0.0.1:5000/
 ```
 
----
 
 ## 📋 Requirements
 
@@ -126,7 +120,6 @@ pdfplumber
 scikit-learn
 ```
 
----
 
 ## 🧪 Example Workflow
 
@@ -142,7 +135,6 @@ Upload a PDF research paper.
 * AI-generated Summary
 * Final Conclusion
 
----
 
 ## 📸 Screenshots
 
@@ -152,18 +144,7 @@ Upload a PDF research paper.
 * Processing Screen
 * Summary Result Page
 
----
 
-## 🔮 Future Enhancements
-
-* Multi-language research paper summarization
-* Voice-based summary output
-* Download summary as PDF or DOCX
-* Keyword-based searching within papers
-* Citation and reference extraction
-* Support for multiple paper uploads at once
-
----
 
 ## 🤝 Contributing
 
@@ -190,13 +171,7 @@ git push origin feature-name
 
 5. Open a Pull Request
 
----
 
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
 
 ## 👩‍💻 Author
 
