@@ -1,32 +1,51 @@
-📄 AI-Based Research Paper Summarization
+# 📄 AI-Based Research Paper Summarization
 
 An intelligent web application that automatically summarizes research papers using Natural Language Processing (NLP) and Machine Learning techniques. The system helps students, researchers, and professionals quickly understand the main ideas, methodology, and conclusions of lengthy academic papers.
 
-🚀 Features
-📑 Upload research papers in PDF format
-🧠 Automatically extracts text from uploaded papers
-✂️ Generates concise summaries of long research papers
-🔍 Highlights important keywords and main concepts
-📌 Displays abstract, conclusion, and summarized content separately
-🌐 User-friendly web interface
-⚡ Fast and efficient summarization using AI/NLP techniques
-🛠️ Technologies Used
-Frontend
-HTML
-CSS
-JavaScript
-Bootstrap
-Backend
-Python
-Flask / Django
-AI / NLP
-NLTK
-spaCy
-Transformers / Hugging Face
-Scikit-learn
-File Handling
-PyPDF2 / pdfplumber
-📂 Project Structure
+---
+
+## 🚀 Features
+
+* 📑 Upload research papers in PDF format
+* 🧠 Automatically extracts text from uploaded papers
+* ✂️ Generates concise summaries of long research papers
+* 🔍 Highlights important keywords and main concepts
+* 📌 Displays abstract, conclusion, and summarized content separately
+* 🌐 User-friendly web interface
+* ⚡ Fast and efficient summarization using AI/NLP techniques
+
+---
+
+## 🛠️ Technologies Used
+
+### Frontend
+
+* HTML
+* CSS
+* JavaScript
+* Bootstrap
+
+### Backend
+
+* Python
+* Flask / Django
+
+### AI / NLP
+
+* NLTK
+* spaCy
+* Transformers / Hugging Face
+* Scikit-learn
+
+### File Handling
+
+* PyPDF2 / pdfplumber
+
+---
+
+## 📂 Project Structure
+
+```text
 ai-research-paper-summarization/
 │
 ├── static/
@@ -44,38 +63,59 @@ ai-research-paper-summarization/
 ├── app.py                   # Main backend file
 ├── requirements.txt
 └── README.md
-⚙️ How It Works
-User uploads a research paper in PDF format.
-The system extracts the text from the PDF.
-Preprocessing is performed:
-Remove special characters
-Tokenization
-Stopword removal
-Lemmatization / Stemming
-The AI model analyzes the paper and generates a summary.
-The summarized text is displayed to the user.
-📥 Installation
+```
+
+---
+
+## ⚙️ How It Works
+
+1. User uploads a research paper in PDF format.
+2. The system extracts the text from the PDF.
+3. Preprocessing is performed:
+
+   * Remove special characters
+   * Tokenization
+   * Stopword removal
+   * Lemmatization / Stemming
+4. The AI model analyzes the paper and generates a summary.
+5. The summarized text is displayed to the user.
+
+---
+
+## 📥 Installation
 
 Clone the repository:
 
+```bash
 git clone https://github.com/your-username/ai-research-paper-summarization.git
 cd ai-research-paper-summarization
+```
 
 Install dependencies:
 
+```bash
 pip install -r requirements.txt
+```
 
 Run the project:
 
+```bash
 python app.py
+```
 
 Open in browser:
 
+```text
 http://127.0.0.1:5000/
-📋 Requirements
+```
 
-Example requirements.txt:
+---
 
+## 📋 Requirements
+
+Example `requirements.txt`:
+
+```text
 flask
 nltk
 spacy
@@ -84,48 +124,82 @@ torch
 PyPDF2
 pdfplumber
 scikit-learn
-🧪 Example Workflow
-Input
+```
+
+---
+
+## 🧪 Example Workflow
+
+### Input
 
 Upload a PDF research paper.
 
-Output
-Paper Title
-Extracted Abstract
-Important Keywords
-AI-generated Summary
-Final Conclusion
-📸 Screenshots
+### Output
 
-Add screenshots of:
+* Paper Title
+* Extracted Abstract
+* Important Keywords
+* AI-generated Summary
+* Final Conclusion
 
-Upload Page
-Processing Screen
-Summary Result Page
-🔮 Future Enhancements
-Multi-language research paper summarization
-Voice-based summary output
-Download summary as PDF or DOCX
-Keyword-based searching within papers
-Citation and reference extraction
-Support for multiple paper uploads at once
-🤝 Contributing
+---
+
+## 📸 Screenshots
+
+*Add screenshots of:*
+
+* Upload Page
+* Processing Screen
+* Summary Result Page
+
+---
+
+## 🔮 Future Enhancements
+
+* Multi-language research paper summarization
+* Voice-based summary output
+* Download summary as PDF or DOCX
+* Keyword-based searching within papers
+* Citation and reference extraction
+* Support for multiple paper uploads at once
+
+---
+
+## 🤝 Contributing
 
 Contributions are welcome!
 
-Fork the repository
-Create a new branch
+1. Fork the repository
+2. Create a new branch
+
+```bash
 git checkout -b feature-name
-Commit your changes
+```
+
+3. Commit your changes
+
+```bash
 git commit -m "Add new feature"
-Push to the branch
+```
+
+4. Push to the branch
+
+```bash
 git push origin feature-name
-Open a Pull Request
-📄 License
+```
+
+5. Open a Pull Request
+
+---
+
+## 📄 License
 
 This project is licensed under the MIT License.
 
-👩‍💻 Author
+---
 
-Rachana Hegde
-GitHub: https://github.com/Rachana-Hegde
+## 👩‍💻 Author
+
+**Rachana-Hegde**
+GitHub: `https://github.com/Rachana-Hegde`
+
