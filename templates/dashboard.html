@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="welcome-banner p-4 rounded">
+            <h1 class="display-5 fw-bold">Welcome, {{ session.username }}!</h1>
+            <p class="lead">Manage your research papers efficiently with our comprehensive toolkit.</p>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- Stats Cards -->
+    <div class="col-md-6 col-lg-3">
+        <div class="stats-card card text-center h-100">
+            <div class="card-body">
+                <i class="fas fa-file-pdf fa-3x text-primary mb-3"></i>
+                <h3 class="card-title">{{ paper_count }}</h3>
+                <p class="card-text">Research Papers</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-3">
+        <div class="stats-card card text-center h-100">
+            <div class="card-body">
+                <i class="fas fa-object-group fa-3x text-success mb-3"></i>
+                <h3 class="card-title">{{ cluster_count }}</h3>
+                <p class="card-text">Paper Clusters</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-3">
+        <div class="stats-card card text-center h-100">
+            <div class="card-body">
+                <i class="fas fa-quote-right fa-3x text-warning mb-3"></i>
+                <h3 class="card-title">0</h3>
+                <p class="card-text">Citations Generated</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-3">
+        <div class="stats-card card text-center h-100">
+            <div class="card-body">
+                <i class="fas fa-chart-line fa-3x text-info mb-3"></i>
+                <h3 class="card-title">0</h3>
+                <p class="card-text">Analysis Completed</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0"><i class="fas fa-clock me-2"></i>Recent Papers</h4>
+            </div>
+            <div class="card-body">
+                {% if recent_papers %}
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Uploaded</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for paper in recent_papers %}
+                            <tr>
+                                <td>{{ paper.title }}</td>
+                                <td>{{ paper.created_at[:10] }}</td>
+                                <td>
+                                    <a href="{{ url_for('summary') }}?paper_id={{ paper.id }}" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-search"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <p class="text-muted text-center py-4">No papers uploaded yet. <a href="{{ url_for('upload') }}">Upload your first paper</a> to get started.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0"><i class="fas fa-rocket me-2"></i>Quick Actions</h4>
+            </div>
+            <div class="card-body">
+                <div class="d-grid gap-2">
+                    <a href="{{ url_for('upload') }}" class="btn btn-primary">
+                        <i class="fas fa-upload me-2"></i>Upload New Paper
+                    </a>
+                    <a href="{{ url_for('summary') }}" class="btn btn-outline-primary">
+                        <i class="fas fa-file-alt me-2"></i>Generate Summary
+                    </a>
+                    <a href="{{ url_for('clustering') }}" class="btn btn-outline-success">
+                        <i class="fas fa-object-group me-2"></i>Cluster Papers
+                    </a>
+                    <a href="{{ url_for('plagiarism') }}" class="btn btn-outline-warning">
+                        <i class="fas fa-search me-2"></i>Check Plagiarism
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

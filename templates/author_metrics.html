@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0"><i class="fas fa-user-tie me-2"></i>Author Search</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="author_name" class="form-label">Author Name</label>
+                        <input type="text" class="form-control" id="author_name" name="author_name" 
+                               placeholder="e.g., Dr. Smith Johnson" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="fas fa-chart-line me-2"></i>Get Metrics
+                    </button>
+                </form>
+
+                {% if author_data %}
+                <div class="mt-4 p-3 bg-light rounded">
+                    <h6>Author Metrics Summary:</h6>
+                    <ul class="list-unstyled">
+                        <li><strong>h-index:</strong> {{ h_index }}</li>
+                        <li><strong>Total Citations:</strong> {{ total_citations }}</li>
+                        <li><strong>Papers Count:</strong> {{ paper_count }}</li>
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-8">
+        {% if author_data %}
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0"><i class="fas fa-list me-2"></i>Author Publications</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Paper Title</th>
+                                <th>Citations</th>
+                                <th>Year</th>
+                                <th>Journal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for paper in author_data %}
+                            <tr>
+                                <td>{{ paper.paper_title }}</td>
+                                <td>
+                                    <span class="badge bg-primary">{{ paper.citations }}</span>
+                                </td>
+                                <td>{{ paper.publication_year }}</td>
+                                <td>{{ paper.journal_name }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="card">
+            <div class="card-body text-center py-5">
+                <i class="fas fa-user-tie fa-3x text-muted mb-3"></i>
+                <p class="text-muted">Search for an author to view their metrics and publications</p>
+                <p class="small text-muted">Try: Dr. Smith Johnson, Dr. Sarah Chen, Dr. Robert Brown</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

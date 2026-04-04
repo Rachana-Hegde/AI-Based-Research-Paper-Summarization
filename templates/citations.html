@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-5">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0"><i class="fas fa-plus me-2"></i>Generate Citation</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="paper_id" class="form-label">Research Paper</label>
+                        <select class="form-select" id="paper_id" name="paper_id" required>
+                            <option value="">Choose a paper...</option>
+                            {% for paper in papers %}
+                            <option value="{{ paper.id }}">{{ paper.title }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="format_type" class="form-label">Citation Format</label>
+                        <select class="form-select" id="format_type" name="format_type" required>
+                            <option value="APA">APA (American Psychological Association)</option>
+                            <option value="MLA">MLA (Modern Language Association)</option>
+                            <option value="Chicago">Chicago Style</option>
+                            <option value="IEEE">IEEE</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="fas fa-magic me-2"></i>Generate Citation
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-info-circle me-2"></i>About Citation Formats</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <li class="mb-2"><strong>APA:</strong> Commonly used in social sciences</li>
+                    <li class="mb-2"><strong>MLA:</strong> Preferred in humanities</li>
+                    <li class="mb-2"><strong>Chicago:</strong> Used in history and some sciences</li>
+                    <li><strong>IEEE:</strong> Standard in engineering and computer science</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-7">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0"><i class="fas fa-list me-2"></i>Generated Citations</h4>
+            </div>
+            <div class="card-body">
+                {% if citations %}
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Citation</th>
+                                <th>Format</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for citation in citations %}
+                            <tr>
+                                <td>{{ citation.citation_text }}</td>
+                                <td><span class="badge bg-primary">{{ citation.format_type }}</span></td>
+                                <td>{{ citation.created_at[:10] }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="text-center text-muted py-5">
+                    <i class="fas fa-quote-right fa-3x mb-3"></i>
+                    <p>No citations generated yet. Create your first citation using the form.</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

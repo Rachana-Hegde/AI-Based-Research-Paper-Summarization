@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="mb-0"><i class="fas fa-chart-bar me-2"></i>Author Metrics</h3>
+            </div>
+            <div class="card-body">
+                <p class="lead">Track your research impact and productivity with comprehensive author metrics.</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-3 mb-4">
+                        <div class="metric-card text-center p-4 rounded">
+                            <i class="fas fa-file-alt fa-2x text-primary mb-3"></i>
+                            <h3 class="display-4 fw-bold">{{ metrics.total_papers }}</h3>
+                            <p class="mb-0">Total Papers</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4">
+                        <div class="metric-card text-center p-4 rounded">
+                            <i class="fas fa-ruler-combined fa-2x text-success mb-3"></i>
+                            <h3 class="display-4 fw-bold">{{ metrics.avg_paper_length }}</h3>
+                            <p class="mb-0">Avg. Characters</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4">
+                        <div class="metric-card text-center p-4 rounded">
+                            <i class="fas fa-quote-right fa-2x text-warning mb-3"></i>
+                            <h3 class="display-4 fw-bold">{{ metrics.total_citations }}</h3>
+                            <p class="mb-0">Citations Generated</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4">
+                        <div class="metric-card text-center p-4 rounded">
+                            <i class="fas fa-star fa-2x text-info mb-3"></i>
+                            <h3 class="display-4 fw-bold">{{ metrics.h_index }}</h3>
+                            <p class="mb-0">h-index</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0"><i class="fas fa-trophy me-2"></i>Research Impact</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label>h-index: {{ metrics.h_index }}</label>
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: {{ (metrics.h_index / (metrics.total_papers if metrics.total_papers > 0 else 1)) * 100 }}%"></div>
+                                    </div>
+                                    <small class="text-muted">Your h-index measures both productivity and citation impact.</small>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label>Papers with Citations: {{ metrics.papers_with_citations }} / {{ metrics.total_papers }}</label>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success" style="width: {{ (metrics.papers_with_citations / (metrics.total_papers if metrics.total_papers > 0 else 1)) * 100 }}%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0"><i class="fas fa-lightbulb me-2"></i>Productivity Insights</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Paper Collection Size
+                                        <span class="badge bg-primary rounded-pill">{{ metrics.total_papers }}</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Average Paper Length
+                                        <span class="badge bg-success rounded-pill">{{ metrics.avg_paper_length }} chars</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Citation Generation
+                                        <span class="badge bg-warning rounded-pill">{{ metrics.total_citations }}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
