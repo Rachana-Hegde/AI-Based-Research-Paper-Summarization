@@ -139,7 +139,8 @@ Upload a PDF research paper.
 ## 📸 Screenshots
 
 <img width="500" height="500" alt="3" src="https://github.com/user-attachments/assets/a4cc18ac-8aee-44e0-8d5f-908fac2f9033" />
-
+<img width="500" height="500" alt="4" src="https://github.com/user-attachments/assets/3faaa697-1161-4f9b-a038-7dc08287f640" />
+<img width="500" height="500" alt="7" src="https://github.com/user-attachments/assets/3a7d5031-6c77-420a-a7e1-f89e9c51ffd6" />
 
 
 
