@@ -173,6 +173,6 @@ git push origin feature-name
 
 ## 👩‍💻 Author
 
-**Rachana-Hegde**
-GitHub: `https://github.com/Rachana-Hegde`
+**Rachana Hegde**
+🔗 GitHub: [https://github.com/Rachana-Hegde](https://github.com/Rachana-Hegde)
 
